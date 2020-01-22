@@ -28,13 +28,13 @@ So, we just need to use Flutter Web `EngineParagraph` and `BitmapCanvas`, and se
 
 Why we need SVG? Because `Html.Canvas drawText` can only draw simple text.
 
-Image with SVG source, is a hacking way to resolve this problem. [Code](https://github.com/PonyCui/flutter/blob/fed253253c9daa87d9bd04b0b9da3a68ba83204e/lib/web_ui/lib/src/engine/compositor/canvas.dart#L186)
+Image with SVG source, is a hacking way to solve this problem. [Code](https://github.com/PonyCui/flutter/blob/fed253253c9daa87d9bd04b0b9da3a68ba83204e/lib/web_ui/lib/src/engine/compositor/canvas.dart#L186)
 
 We put all text html to SVG data url, set source to ImageElement, and draw ImageElement to a offscreen CanvasElement.
 
 And then, send result to Skia, render it.
 
-## Implement
+## Implementation
 
 The Flutter engine code has pushed to [https://github.com/PonyCui/flutter/tree/web_skia_fontLoadingPatch](https://github.com/PonyCui/flutter/tree/web_skia_fontLoadingPatch).
 
